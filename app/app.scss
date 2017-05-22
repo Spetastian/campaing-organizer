@@ -1,0 +1,44 @@
+@import "layout";
+
+body {
+  font-family: $font-stack;
+}
+
+.mainWrapper {
+  min-height: 800px;
+  margin: $main-content-margin 0 0 0;
+  display: flex;
+  flex-flow: row;
+}
+
+.mainWrapper > article {
+  @extend .standardPadding;
+  margin: 12px;
+  flex: 3 1 60%;
+  order: 2;
+}
+
+.mainWrapper > nav {
+  @extend .depth1, .standardPadding;
+  flex: 1 6 20%;
+  order: 1;
+}
+
+.mainWrapper > aside {
+  @extend .depth1, .standardPadding;
+  margin: 4px;
+  flex: 1 6 20%;
+  order: 3;
+}
+
+.header {
+  @extend .depth1, .standardPadding;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #fbfbfb;
+  height: $header-height;
+  z-index: 300;
+}
+ 
