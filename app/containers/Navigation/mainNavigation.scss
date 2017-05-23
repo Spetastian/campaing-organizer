@@ -1,0 +1,13 @@
+.navigation {
+  text-decoration: none;
+  width: 100%;
+}
+
+.navigation li {
+  padding: 5px;
+  width: 100%;
+}
+
+.navigation li .active {
+  background-color: gainsboro;
+}

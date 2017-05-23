@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import appStyle from '../app.scss'
+import appStyle from '../../app.scss'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import 'react-quill/dist/quill.core.css'
-import connectProps from '../utils/redux-connect-helper'
+import connectProps from '../../utils/redux-connect-helper'
 
-class Home extends Component {
+class CampaignPage extends Component {
     constructor(props) {
         super(props);
         this.state = {text: 'yeah motheruckes'};
@@ -17,13 +17,15 @@ class Home extends Component {
 
     render () {
         return (
-            <ReactQuill
-                theme="snow"
-                value={this.state.text}
-                onChange={this.handleChange}
-            />
+            <div>
+                <ReactQuill
+                    theme="snow"
+                    value={this.state.text}
+                    onChange={this.handleChange}
+                />
+            </div>
         )
     }
 }
 
-export default Home
+export default CampaignPage
