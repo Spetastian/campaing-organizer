@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import appStyle from '../../app.scss'
+import { connect } from 'react-redux'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import 'react-quill/dist/quill.core.css'
@@ -28,4 +28,16 @@ class CampaignPage extends Component {
     }
 }
 
-export default CampaignPage
+const mapStateToProps = (state) => {
+    return { chapter: state.campaign.selectedChapter }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {}
+}
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CampaignPage)

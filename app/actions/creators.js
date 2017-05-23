@@ -1,9 +1,14 @@
-import { 
-    USER_LOGIN_REQUEST,
-    USER_LOGIN_SUCCESS,
-    USER_LOGIN_FAILURE
+import {
+    CREATE_CHAPTER_REQUEST,
+    CREATE_CHAPTER_SUCCESS,
+    CREATE_CHAPTER_FAILURE
 } from './types'
 
-export const userLoginRequest = (username, password) => ({type: USER_LOGIN_REQUEST, username: username, password: password});
-export const userLoginSuccess = () => ({type: USER_LOGIN_SUCCESS});
-export const userLoginFailure = (error) => ({type: USER_LOGIN_FAILURE, error: error});
+export const createChapterRequest = (chapterName) =>
+    ({ type: CREATE_CHAPTER_REQUEST, chapterName })
+
+export const createChapterSuccess = (chapterId, chapterTitle) =>
+    ({ type: CREATE_CHAPTER_SUCCESS, chapterId, chapterTitle })
+
+export const createChapterFailure = (error) =>
+    ({ type: CREATE_CHAPTER_FAILURE, error: error })
