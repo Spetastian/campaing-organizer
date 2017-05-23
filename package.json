@@ -1,5 +1,5 @@
 {
-  "name": "react-webpack-starter",
+  "name": "rpg-campaign-manager",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -8,10 +8,9 @@
   },
   "author": "Sebastian Lindström <sebastian.lindstrom@gmail.com>",
   "contributors": [
-    "Sebastian Lindström <sebastian.lindstrom@gmail.com>",
-    "Henrik Larsson <henrik@hlarsson.com>"
+    "Sebastian Lindström <sebastian.lindstrom@gmail.com>"
   ],
-  "license": "MIT",
+  "license": "ICS",
   "dependencies": {
     "express": "^4.14.0"
   },
@@ -52,7 +51,7 @@
     "redux-observable": "^0.14.1",
     "rxjs": "^5.0.3",
     "sass-loader": "^6.0.5",
-    "style-loader": "^0.17.0",
+    "style-loader": "^0.18.1",
     "webfontloader": "^1.6.27",
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0",
