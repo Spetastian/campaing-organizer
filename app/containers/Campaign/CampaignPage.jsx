@@ -1,30 +1,54 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { changeChapterNameRequest } from '../../actions/creators'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import 'react-quill/dist/quill.core.css'
-import connectProps from '../../utils/redux-connect-helper'
 
 class CampaignPage extends Component {
     constructor(props) {
-        super(props);
-        this.state = {text: 'yeah motheruckes'};
+        super(props)
+        this.state = {
+            title: '',
+            content: ''
+        }
     }
 
-    handleChange = (value) => {
+    componentWillReceiveProps(nextProps){
+        const { chapter } = nextProps
+        this.setState({
+            title: chapter && chapter.title || '',
+            content: chapter && chapter.content || '',
+        })
+    }
+
+    handleTitleChange = (evt) => {
+        this.setState({ title: evt.target.value })
+        this.props.onTitleChange(this.props.chapter.id, evt.target.value)
+    }
+
+    handleTextChange = (value) => {
         this.setState({ text: value })
     }
 
     render () {
-        return (
-            <div>
+        return this.props.chapter ?
+            (<div>
+                <input
+                    name="title"
+                    type="text"
+                    onChange={this.handleTitleChange}
+                    value={this.state.title}
+                />
                 <ReactQuill
                     theme="snow"
                     value={this.state.text}
-                    onChange={this.handleChange}
+                    onChange={this.handleTextChange}
                 />
-            </div>
-        )
+            </div>)
+            :
+            (<p>Please select or create a chapter</p>)
+
     }
 }
 
@@ -33,7 +57,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        onTitleChange: (id, newTitle) =>
+            dispatch(changeChapterNameRequest(id, newTitle))
+    }
 }
 
 

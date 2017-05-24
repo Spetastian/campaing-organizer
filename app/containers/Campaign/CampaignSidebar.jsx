@@ -10,12 +10,19 @@ class CampaignSidebar extends Component {
         this.props.onNewChapterCreated(chapterName)
     }
 
+    renderChapterList(){
+        return this.props.chapters.map((chapter, index) => (
+            <li key={index}>{chapter.title}</li>
+        ))
+    }
+
     render () {
         return (
             <ul>
                 <li>
                     <NewChapterForm onNewChapterCreated={this.handleOnChapterCreated} />
                 </li>
+                {this.renderChapterList()}
             </ul>
         )
     }
