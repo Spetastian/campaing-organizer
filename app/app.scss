@@ -2,6 +2,8 @@
 
 body {
   font-family: $font-stack;
+  color: $main-font-color;
+  margin: 0;
 }
 
 .mainWrapper {
@@ -19,13 +21,13 @@ body {
 }
 
 .mainWrapper > nav {
-  @extend .depth1, .standardPadding;
+  @extend .depth1;
   flex: 1 6 20%;
   order: 1;
 }
 
 .mainWrapper > aside {
-  @extend .depth1, .standardPadding;
+  @extend .depth1;
   margin: 4px;
   flex: 1 6 20%;
   order: 3;

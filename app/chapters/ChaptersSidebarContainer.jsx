@@ -7,10 +7,9 @@ import {
 } from '../actions/creators'
 import ChapterList from './components/ChapterList'
 
-class CampaignSidebar extends Component {
+class ChaptersSidebarContainer extends Component {
 
     componentDidMount(){
-        console.log('CampaignSidebar.componentDidMout')
         this.props.loadChapterList()
     }
 
@@ -39,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(CampaignSidebar)
+)(ChaptersSidebarContainer)

@@ -1,13 +1,21 @@
+@import "../../layout";
+
 .navigation {
-  text-decoration: none;
-  width: 100%;
+  min-width: 160px;
+  padding: 0;
+}
+
+.navigation a {
+  @extend .navigationAnchor;
+  border-bottom: 1px solid lightgrey;
+  padding: 15px 0 15px 20px;
 }
 
 .navigation li {
-  padding: 5px;
-  width: 100%;
+  @extend .navigationAnchor;
+  list-style: none;
 }
 
 .navigation li .active {
-  background-color: gainsboro;
+  background-color: whitesmoke;
 }
