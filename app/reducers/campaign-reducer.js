@@ -5,13 +5,17 @@ import {
 
     CHANGE_CHAPTER_NAME_REQUEST,
     CHANGE_CHAPTER_NAME_SUCCESS,
-    CHANGE_CHAPTER_NAME_FAILURE
+    CHANGE_CHAPTER_NAME_FAILURE,
+
+    FETCH_CHAPTER_REQUEST,
+    FETCH_CHAPTER_SUCCESS,
+    FETCH_CHAPTER_FAILURE
 } from '../actions/types'
 
 const initialState = {
     chapters: [],
-    selectedChapter: null,
-    loading: false
+    loading: false,
+    selectedChapter: null
 };
 
 export default function campaignReducer(state = initialState, action) {
@@ -23,14 +27,22 @@ export default function campaignReducer(state = initialState, action) {
             })
 
         case CREATE_CHAPTER_SUCCESS:
-            const newChapter =
-                { id: action.chapterId, title: action.chapterTitle }
-            const selectedChapter =
-                state.selectedChapter ? state.selectedChapter : newChapter
+            console.log(action)
             return Object.assign({}, state, {
                 loading: false,
-                selectedChapter,
-                chapters: [...state.chapters, newChapter]
+                chapters: action.updatedChapterList
+            })
+
+        case FETCH_CHAPTER_REQUEST:
+            return Object.assign({}, state, {
+                loading: true
+            })
+
+        case FETCH_CHAPTER_SUCCESS:
+            console.log(action)
+            return Object.assign({}, state, {
+                loading: false,
+                selectedChapter: action.chapter
             })
 
         case CHANGE_CHAPTER_NAME_REQUEST:
