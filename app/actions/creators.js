@@ -9,9 +9,24 @@ import {
 
     FETCH_CHAPTER_REQUEST,
     FETCH_CHAPTER_SUCCESS,
-    FETCH_CHAPTER_FAILURE
+    FETCH_CHAPTER_FAILURE,
+
+    FETCH_CHAPTER_LIST_REQUEST,
+    FETCH_CHAPTER_LIST_SUCCESS,
+    FETCH_CHAPTER_LIST_FAILURE
 
 } from './types'
+
+
+
+export const fetchChapterListRequest = () =>
+    ({ type: FETCH_CHAPTER_LIST_REQUEST })
+
+export const fetchChapterListSuccess = (chapterList) =>
+    ({ type: FETCH_CHAPTER_LIST_SUCCESS, chapterList })
+
+export const fetchChapterListFailure = (error) =>
+    ({ type: FETCH_CHAPTER_LIST_FAILURE, error: error })
 
 export const createChapterRequest = (chapterTitle) =>
     ({ type: CREATE_CHAPTER_REQUEST, chapterTitle })

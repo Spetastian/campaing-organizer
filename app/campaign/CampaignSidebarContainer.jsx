@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createChapterRequest, selectChapterRequest } from '../actions/creators'
+import { 
+    createChapterRequest, 
+    selectChapterRequest,
+    fetchChapterListRequest
+} from '../actions/creators'
 import ChapterList from './components/ChapterList'
 
 class CampaignSidebar extends Component {
+
+    componentDidMount(){
+        console.log('CampaignSidebar.componentDidMout')
+        this.props.loadChapterList()
+    }
 
     handleOnChapterCreated = (chapterName) => {
         this.props.createNewChapter(chapterName)
@@ -19,6 +28,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        loadChapterList: () =>
+            dispatch(fetchChapterListRequest()),
         createNewChapter: (title) =>
             dispatch(createChapterRequest(title))
     }

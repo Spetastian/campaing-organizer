@@ -6,7 +6,7 @@ import App from './App'
 import configureStore, { history }  from './configure-store'
 
 import './static/index.html'
-import 'material-design-icons'
+//import 'material-design-icons'
 import WebFont from 'webfontloader'
 
 WebFont.load({

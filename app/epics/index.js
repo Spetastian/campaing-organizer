@@ -1,8 +1,7 @@
 import { combineEpics } from 'redux-observable';
 import campaignEpicsCreator from './campaign-epic';
-const { createChapterRequestEpic, changeChapterNameEpic } = campaignEpicsCreator();
+const campaignEpics = campaignEpicsCreator();
 
 export const rootEpic = combineEpics(
-    createChapterRequestEpic,
-    changeChapterNameEpic
+    campaignEpics
 )
