@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch } from 'react-router'
 import { Route } from 'react-router-dom'
-import { LocationsPage, LocationsSidebar } from './containers/Locations'
+import { LocationsPageContainer } from './locations'
 import { ChaptersPageContainer, ChaptersSidebarContainer } from './chapters'
 import { CharactersPageContainer } from './characters'
 import { MainNavigation } from './containers/Navigation'
@@ -22,14 +22,13 @@ const App = () => {
                       <Route exact path="/" component={ChaptersPageContainer}/>
                       <Route exact path="/campaign/:chapterId" component={ChaptersPageContainer}/>
                       <Route exact path="/characters" component={CharactersPageContainer}/>
-                      <Route exact path="/locations" component={LocationsPage}/>
+                      <Route exact path="/locations" component={LocationsPageContainer}/>
                   </Switch>
               </article>
               <aside>
                   <Switch>
                       <Route exact path="/" component={ChaptersSidebarContainer}/>
                       <Route exact path="/characters" component={ChaptersSidebarContainer}/>
-                      <Route exact path="/locations" component={LocationsSidebar}/>
                       <Route path="/campaign" component={ChaptersSidebarContainer}/>
                   </Switch>
               </aside>

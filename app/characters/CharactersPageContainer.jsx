@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 import { 
     fetchCharacterListRequest, 
     createCharacterRequest
- } from '../actions/creators'
+ } from './actions'
 
 import CharacterList from './components/CharacterList'
 
 class CharactersPageContainer extends Component {
+
+    componentDidMount(){
+        this.props.loadCharacterList()
+    }
 
     render () {
         return <CharacterList characters={this.props.characters} />
@@ -15,7 +19,7 @@ class CharactersPageContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { characters: state.characters }
+    return { characters: state.characters.characterList }
 }
 
 const mapDispatchToProps = (dispatch) => {

@@ -10,6 +10,7 @@ class CharacterList extends Component{
                     this.props.characters.map(
                         character => (
                             <CharacterItem 
+                                key={character.id}
                                 id={character.id} 
                                 name={character.name}
                             />
@@ -20,3 +21,5 @@ class CharacterList extends Component{
         )
     }
 }
+
+export default CharacterList

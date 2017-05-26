@@ -1,2 +1,5 @@
 export { default as ChaptersPageContainer } from './ChaptersPageContainer'
 export { default as ChaptersSidebarContainer } from './ChaptersSidebarContainer'
+export { default as chaptersReducer} from './reducer'
+export { default as chaptersEpics } from './epics'
+export * from './actions'

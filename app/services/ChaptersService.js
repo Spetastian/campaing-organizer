@@ -9,7 +9,7 @@ const chapters = [
 
 let nextId = 0
 
-class CampaignService {
+class ChaptersService {
     
     getChapterList(campaignId){
         return Observable.of(chapters)
@@ -32,4 +32,4 @@ class CampaignService {
     }
 }
 
-export default CampaignService
+export default ChaptersService

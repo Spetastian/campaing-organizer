@@ -4,7 +4,7 @@ import {
     createChapterRequest, 
     selectChapterRequest,
     fetchChapterListRequest
-} from '../actions/creators'
+} from './actions'
 import ChapterList from './components/ChapterList'
 
 class ChaptersSidebarContainer extends Component {
@@ -22,7 +22,7 @@ class ChaptersSidebarContainer extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    return { chapters: state.campaign.chapters }
+    return { chapters: state.chapters.chapterList }
 }
 
 const mapDispatchToProps = (dispatch) => {

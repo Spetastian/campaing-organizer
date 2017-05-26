@@ -4,7 +4,7 @@ import {
     changeChapterNameRequest, 
     fetchChapterRequest,
     fetchChapterListRequest
- } from '../actions/creators'
+ } from './actions'
 import ChapterList from './components/ChapterList'
 import ChapterEditor from './components/ChapterEditor'
 
@@ -38,8 +38,8 @@ class ChaptersPageContainer extends Component {
 
 const mapStateToProps = (state) => {
     return { 
-        chapter: state.campaign.selectedChapter,
-        chapters: state.campaign.chapters  
+        chapter: state.chapters.selectedChapter,
+        chapters: state.chapters.chapterList  
     }
 }
 

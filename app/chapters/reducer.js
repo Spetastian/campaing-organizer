@@ -1,24 +1,24 @@
 import {
 
-    FETCH_CHARACTER_LIST_REQUEST,
-    FETCH_CHARACTER_LIST_SUCCESS,
-    FETCH_CHARACTER_LIST_FAILURE,
+    FETCH_CHAPTER_LIST_REQUEST,
+    FETCH_CHAPTER_LIST_SUCCESS,
+    FETCH_CHAPTER_LIST_FAILURE,
 
-    CREATE_CHARACTER_REQUEST,
-    CREATE_CHARACTER_SUCCESS,
-    CREATE_CHARACTER_FAILURE,
+    CREATE_CHAPTER_REQUEST,
+    CREATE_CHAPTER_SUCCESS,
+    CREATE_CHAPTER_FAILURE,
 
-    CHANGE_CHARACTER_NAME_REQUEST,
-    CHANGE_CHARACTER_NAME_SUCCESS,
-    CHANGE_CHARACTER_NAME_FAILURE,
+    CHANGE_CHAPTER_NAME_REQUEST,
+    CHANGE_CHAPTER_NAME_SUCCESS,
+    CHANGE_CHAPTER_NAME_FAILURE,
 
-    FETCH_CHARACTER_REQUEST,
-    FETCH_CHARACTER_SUCCESS,
-    FETCH_CHARACTER_FAILURE
-} from '../actions/types'
+    FETCH_CHAPTER_REQUEST,
+    FETCH_CHAPTER_SUCCESS,
+    FETCH_CHAPTER_FAILURE
+} from './actions'
 
 const initialState = {
-    chapters: [],
+    chapterList: [],
     loading: false,
     selectedChapter: null
 };
@@ -26,50 +26,50 @@ const initialState = {
 export default function campaignReducer(state = initialState, action) {
     switch (action.type) {
 
-        case FETCH_CHARACTER_LIST_REQUEST:
+        case FETCH_CHAPTER_LIST_REQUEST:
             return Object.assign({}, state, {
                 loading: true
             })
 
-        case FETCH_CHARACTER_LIST_SUCCESS:
+        case FETCH_CHAPTER_LIST_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                chapters: action.chapterList
+                chapterList: action.chapterList
             })
 
-        case CREATE_CHARACTER_REQUEST:
+        case CREATE_CHAPTER_REQUEST:
             return Object.assign({}, state, {
                 loading: true
             })
 
-        case CREATE_CHARACTER_SUCCESS:
+        case CREATE_CHAPTER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                chapters: action.updatedChapterList
+                chapterList: action.updatedChapterList
             })
 
-        case FETCH_CHARACTER_REQUEST:
+        case FETCH_CHAPTER_REQUEST:
             return Object.assign({}, state, {
                 loading: true
             })
 
-        case FETCH_CHARACTER_SUCCESS:
+        case FETCH_CHAPTER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
                 selectedChapter: action.chapter
             })
 
-        case CHANGE_CHARACTER_NAME_REQUEST:
+        case CHANGE_CHAPTER_NAME_REQUEST:
             return Object.assign({}, state, {
                 loading: true
             })
 
-        case CHANGE_CHARACTER_NAME_SUCCESS:
+        case CHANGE_CHAPTER_NAME_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                selectedChapter: { id: action.chapterId, title: action.newTitle },
-                chapters: state.chapters.map( chapter => {
-                    if(chapter.id === action.chapterId)
+                selectedChapter: { id: action.id, title: action.newTitle },
+                chapterList: state.chapterList.map( chapter => {
+                    if(chapter.id === action.id)
                         return Object.assign({}, chapter, { title: action.newTitle })
                     else
                         return chapter

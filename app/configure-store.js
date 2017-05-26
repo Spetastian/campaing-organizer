@@ -2,8 +2,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import { createEpicMiddleware } from 'redux-observable'
-import rootReducer from './reducers'
-import { rootEpic } from './epics'
+import rootReducer from './rootReducer'
+import rootEpic from './rootEpic'
 //import createLogger from 'redux-logger'
 
 // Create a history of your choosing (we're using a browser history in this case)
