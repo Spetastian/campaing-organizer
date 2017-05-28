@@ -1,9 +1,10 @@
 import React from 'react'
+import ListItem from '../../common/components/ListItem'
 
 const CharacterItem = ({id, name}) => (
-    <div>
-        <p>{name}</p>
-    </div>
+    <ListItem title={name}>
+        <p>Child content</p>
+    </ListItem>
 )
 
 export default CharacterItem

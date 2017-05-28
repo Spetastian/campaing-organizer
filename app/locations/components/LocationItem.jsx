@@ -1,9 +1,10 @@
 import React from 'react'
+import ListItem from '../../common/components/ListItem'
 
 const LocationItem = ({id, title}) => (
-    <div>
-        <p>{title}</p>
-    </div>
+    <ListItem title={title}>
+        <p>Child content</p>
+    </ListItem>
 )
 
 export default LocationItem
