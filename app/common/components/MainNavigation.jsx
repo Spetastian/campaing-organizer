@@ -11,6 +11,9 @@ class MainNavigation extends Component {
                     <NavLink exact to="/" activeClassName={styles.active}>Campaign</NavLink>
                 </li>
                 <li>
+                    <NavLink exact to="/players" activeClassName={styles.active}>Players</NavLink>
+                </li>
+                <li>
                     <NavLink exact to="/characters" activeClassName={styles.active}>Characters</NavLink>
                 </li>
                 <li>

@@ -4,7 +4,8 @@ import { Route } from 'react-router-dom'
 import { LocationsPageContainer } from './locations'
 import { ChaptersPageContainer, ChaptersSidebarContainer } from './chapters'
 import { CharactersPageContainer } from './characters'
-import { MainNavigation } from './containers/Navigation'
+import { PlayersPageContainer } from './players'
+import { MainNavigation } from './common/components/Navigation'
 import styles from './app.scss'
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
                   <Switch>
                       <Route exact path="/" component={ChaptersPageContainer}/>
                       <Route exact path="/campaign/:chapterId" component={ChaptersPageContainer}/>
+                      <Route exact path="/players" component={PlayersPageContainer}/>
                       <Route exact path="/characters" component={CharactersPageContainer}/>
                       <Route exact path="/locations" component={LocationsPageContainer}/>
                   </Switch>
