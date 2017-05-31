@@ -8,7 +8,11 @@ import configureStore, { history }  from './configure-store'
 import './static/index.html'
 //import 'material-design-icons'
 import WebFont from 'webfontloader'
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 WebFont.load({
   google: {
     families: ['Roboto', 'Material Icons']
