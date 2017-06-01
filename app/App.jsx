@@ -22,7 +22,7 @@ const App = () => {
                 </nav>
                 <article>
                     <Switch>
-                        <Route exact path="/" component={ChaptersPageContainer}/>
+                        <Route exact path="/" component={CharacterSheetPageContainer}/>
                         <Route exact path="/campaign/:chapterId" component={ChaptersPageContainer}/>
                         <Route exact path="/players" component={PlayersPageContainer}/>
                         <Route exact path="/characters/:characterId" component={CharacterSheetPageContainer}/>
