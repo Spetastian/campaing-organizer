@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+}
+
+.nameContainer {
+    padding-top:4.5%;
+    min-width: 100px;
+}
+
+.container span {
+    letter-spacing: 2px;
+    text-align: center;
+    height: 100%;
+}
+
+.attrInput {
+    max-width: 20px;
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+}
+
+.valueSuffix {
+    padding: 0 4px 0 2px;
+}
