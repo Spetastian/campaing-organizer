@@ -13,7 +13,7 @@ const hintStyle = {
 
 const Attribute = ({
     name,
-    withBonus, 
+    withBonus,
     valuePrefix, 
     valueSuffix, 
     bonusPrefix, 
@@ -26,7 +26,7 @@ const Attribute = ({
         <div className={styles.nameContainer}>
             <span>{name}</span>
         </div>
-        <div>
+        <div className={styles.valueContainer}>
             <span className={styles.valuePrefix}>{valuePrefix}</span>
             <TextField hintStyle={hintStyle} inputStyle={inputStyle} name="value" className={styles.attrInput} type="number" hintText="0"/>
             <span className={styles.valueSuffix}>{valueSuffix}</span>

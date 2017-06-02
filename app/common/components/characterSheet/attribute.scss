@@ -3,8 +3,17 @@
 }
 
 .nameContainer {
-    padding-top:8%;
-    min-width: 130px;
+    padding-top:16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 110px;
+    min-width: 110px;
+    
+}
+
+.valueContainer {
+    min-width: 96px;
 }
 
 .container span {
